@@ -1,0 +1,6 @@
+name: AfyAuction
+version: '${project.version}'
+main: net.afyer.afyshell.AfyShell
+author: Nipuru
+api-version: 1.17
+depend: [ AfyLib ]
