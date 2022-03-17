@@ -1,6 +1,7 @@
 package net.afyer.afyshell;
 
 import org.apache.commons.jexl3.JexlBuilder;
+import org.apache.commons.jexl3.JexlEngine;
 import org.apache.commons.jexl3.MapContext;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -19,7 +20,7 @@ public class Command implements TabExecutor {
     Map<String, Object> globalValues = new ConcurrentHashMap<>();
     //存放脚本属性的容器
     MapContext context = new MapContext();
-    JexlBuilder builder = new JexlBuilder();
+    JexlBuilder builder = new JexlBuilder().namespaces(Util.make(new HashMap<>(), map -> map.put(null, Namespace.class)));
     List<String> sub = Arrays.asList("import", "clear", "init", "lg", "sc", "sxp");
     public Command() {
         globalValues.put("Bukkit", Bukkit.class);
