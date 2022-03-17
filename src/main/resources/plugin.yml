@@ -1,4 +1,4 @@
-name: AfyAuction
+name: AfyShell
 version: '${project.version}'
 main: net.afyer.afyshell.AfyShell
 author: Nipuru

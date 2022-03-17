@@ -73,7 +73,7 @@ public class Command implements TabExecutor {
                     sender.sendMessage("执行脚本：" + sc);
                     try {
                         Object execute = builder.create().createScript(sc).execute(context);
-                        sender.sendMessage("返回结果：" + execute.toString());
+                        sender.sendMessage("返回结果：" + Objects.toString(execute));
                     } catch (Exception e) {
                         sender.sendMessage("发生错误：" + e.getMessage());
                     }
@@ -86,7 +86,7 @@ public class Command implements TabExecutor {
                     sender.sendMessage("执行表达式：" + exp);
                     try {
                         Object evaluate = builder.create().createExpression(exp).evaluate(context);
-                        sender.sendMessage("返回结果：" + evaluate.toString());
+                        sender.sendMessage("返回结果：" + Objects.toString(evaluate));
                     } catch (Exception e) {
                         sender.sendMessage("发生错误：" + e.getMessage());
                     }
