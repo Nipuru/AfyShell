@@ -20,11 +20,11 @@ public class Namespace {
         return Bukkit.getWorld(world);
     }
 
-    public Location location(Player player) {
-        return player.getLocation();
-    }
-
-    public Location location(Block block) {
-        return block.getLocation();
+    public Class<?> clazz(String packageName) {
+        try {
+            return Class.forName(packageName);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
